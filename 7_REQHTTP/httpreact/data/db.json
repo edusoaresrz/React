@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Camisa branca",
+      "price": 39.9
+    },
+    {
+      "id": "3",
+      "name": "Blusa moleton",
+      "price": 200.99
+    },
+    {
+      "id": "4",
+      "name": "Boné aba reta",
+      "price": 25
+    },
+    {
+      "id": "5",
+      "name": "Camisa social",
+      "price": 78.9
+    },
+    {
+      "id": "581c",
+      "name": "Capa de chuva",
+      "price": "50"
+    },
+    {
+      "id": "6afd",
+      "name": "Mouse",
+      "price": "110.50"
+    },
+    {
+      "id": "c3b1",
+      "name": "cabo hdmi",
+      "price": "10"
+    },
+    {
+      "id": "2332",
+      "name": "Camisa Proteção UV",
+      "price": "80"
+    }
+  ]
+}

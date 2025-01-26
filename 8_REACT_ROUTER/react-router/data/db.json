@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Camisa branca",
+      "price": 39.9
+    },
+    {
+      "id": "2",
+      "name": "Blusa moleton",
+      "price": 200.99
+    },
+    {
+      "id": "3",
+      "name": "Boné aba reta",
+      "price": 25
+    }
+  ]
+}

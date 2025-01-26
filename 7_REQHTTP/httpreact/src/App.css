@@ -1,0 +1,40 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.add-product {
+  border: 1px solid #000;
+  width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.container-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  margin-top: 1rem;
+}
+
+.container-items button {
+  width: 80px;
+  height: 20px;
+  margin-left: 1rem;
+  font-size: 0.7rem;
+}
