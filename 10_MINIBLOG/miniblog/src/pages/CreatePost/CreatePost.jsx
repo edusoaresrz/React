@@ -10,9 +10,11 @@ const CreatePost = () => {
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
   const [tags, setTags] = useState([]);
-  const [fomrError, setFormError] = useState("");
+  const [formError, setFormError] = useState("");
 
   const { insertDocument, response } = useInsetDocument("posts");
+
+  const navigate = useNavigate();
 
   const { user } = useAuthValue();
 
@@ -20,22 +22,43 @@ const CreatePost = () => {
     event.preventDefault();
     setFormError("");
 
+    // validação dos campos
+    if (!title || !image || !body || !tags) {
+      setFormError("Preencha todos os campos");
+      return;
+    }
+
     // validar URl da imagem
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL.");
+      console.log(error);
+      return;
+    }
 
     // criar o array de tags
+    const arrayTags = tags
+      .split(",")
+      .map((tag) => tag.trim().toLowerCase())
+      .filter((tag) => tag !== "");
 
-    // chacar todos os valores
+    try {
+      insertDocument({
+        title,
+        image,
+        body,
+        arrayTags,
+        uid: user.uid,
+        createdBy: user.displayName,
+      });
 
-    insertDocument({
-      title,
-      image,
-      body,
-      tags,
-      uid: user.uid,
-      createBy: user.displayName,
-    });
-
-    // redirect to home page
+      // redirect to home page
+      navigate("/");
+    } catch (error) {
+      setFormError("Erro ao salvar os dados.");
+      console.log(error.mesage);
+    }
   };
 
   return (
@@ -93,6 +116,7 @@ const CreatePost = () => {
           </button>
         )}
         {response.error && <p className="error">{response.error}</p>}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
