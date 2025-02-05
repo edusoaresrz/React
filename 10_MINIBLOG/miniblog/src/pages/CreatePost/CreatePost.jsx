@@ -38,17 +38,14 @@ const CreatePost = () => {
     }
 
     // criar o array de tags
-    const arrayTags = tags
-      .split(",")
-      .map((tag) => tag.trim().toLowerCase())
-      .filter((tag) => tag !== "");
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
     try {
       insertDocument({
         title,
         image,
         body,
-        arrayTags,
+        tagsArray,
         uid: user.uid,
         createdBy: user.displayName,
       });
