@@ -18,6 +18,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Dashbord from "./pages/Dashboard/Dashbord";
+import Search from "./pages/Search/Search";
+import Post from "./pages/Post/Post";
 
 //components
 import Navbar from "./components/Navbar/Navbar";
@@ -48,6 +50,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/posts/:id" element={<Post />} />
               <Route
                 path="/login"
                 element={user ? <Navigate to="/" /> : <Login />}

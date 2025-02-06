@@ -4,17 +4,23 @@ import styles from "./Home.module.css";
 // hooks
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
-import { useFetchDocument } from "../../hooks/useFetchDocuments";
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 // components
 import PostDetail from "../../components/PostDetail/PostDetail";
 
 const Home = () => {
   const [query, setQuery] = useState("");
-  const { documents: posts, loading } = useFetchDocument("posts");
+  const { documents: posts, loading } = useFetchDocuments("posts");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (query) {
+      return navigate(`/search?q=${query}`);
+    }
   };
 
   return (

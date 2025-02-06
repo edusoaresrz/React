@@ -1,14 +1,15 @@
+import styles from "./PostDetail.module.css";
+import PropTypes from "prop-types";
+
 import { Link } from "react-router-dom";
 
 const PostDetail = ({ post }) => {
-  console.log(post.image);
-  console.log(post.createBy);
   return (
-    <div>
+    <div className={styles.post}>
       <img src={post.image} alt={post.title} />
       <h2>{post.title}</h2>
-      <p>{post.createBy}</p>
-      <div>
+      <p className={styles.createdBy}>{post.createdBy}</p>
+      <div className={styles.tags}>
         {post.tagsArray.map((tag) => (
           <p key={tag}>
             <span>#</span>
@@ -21,6 +22,10 @@ const PostDetail = ({ post }) => {
       </Link>
     </div>
   );
+};
+
+PostDetail.propTypes = {
+  post: PropTypes.object,
 };
 
 export default PostDetail;
