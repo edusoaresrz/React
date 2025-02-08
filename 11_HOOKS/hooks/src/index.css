@@ -1,0 +1,17 @@
+#root {
+  text-align: center;
+}
+
+body {
+  margin-bottom: 800px;
+}
+
+li {
+  list-style: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+li a {
+  text-decoration: none;
+}
